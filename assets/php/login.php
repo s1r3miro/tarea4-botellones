@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username']) && isset(
     
     // Realiza la conexión a la base de datos (debes proporcionar tus propios datos de conexión).
 
-    $db = new mysqli('localhost:3306', 'root', '', 'bdd_emiro');
+    $db = new mysqli('localhost:3306', 'root', '', 'bdd_botellones');
 
     if ($db->connect_error) {
         die("Error de conexión: " . $db->connect_error);
