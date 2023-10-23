@@ -83,7 +83,7 @@ CREATE TABLE `botellonx_usuarios` (
 --
 
 INSERT INTO `botellonx_usuarios` (`id_Usuario`, `Name`, `Contraseña`) VALUES
-(1, 'Administrador', 'Admin1.');
+(1, 'Alocha', 'Urbe2023+.');
 
 --
 -- Índices para tablas volcadas
