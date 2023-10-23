@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
+--- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 21-10-2023 a las 18:57:02
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Servidor: localhost:3306
+-- Tiempo de generación: 23-10-2023 a las 16:08:43
+-- Versión del servidor: 10.5.20-MariaDB
+-- Versión de PHP: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,50 +40,10 @@ CREATE TABLE `botellonx_botellones` (
 --
 
 INSERT INTO `botellonx_botellones` (`Id_Compra`, `Cantidad`, `Total_lts`, `Fecha_Hora`, `Cedula`) VALUES
-(13, 2, 40, '21-10-2023 16:59', 33333333),
-(14, 5, 200, '21-10-2023 18:35', 30642010),
-(15, 5, 200, '21-10-2023 18:42', 22222222);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `botellonx_clientes`
---
-
-CREATE TABLE `botellonx_clientes` (
-  `Nombre` varchar(12) DEFAULT NULL,
-  `Apellido` varchar(12) DEFAULT NULL,
-  `Cedula` int(11) NOT NULL,
-  `Ubicacion` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `botellonx_clientes`
---
-
-INSERT INTO `botellonx_clientes` (`Nombre`, `Apellido`, `Cedula`, `Ubicacion`) VALUES
-('Emiro', 'Camacho', 30642010, 'mara'),
-('andres', 'lugo', 33333333, 'julio'),
-('abram', 'jesus', 22222222, 'los adulios');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `botellonx_usuarios`
---
-
-CREATE TABLE `botellonx_usuarios` (
-  `id_Usuario` int(11) NOT NULL,
-  `Name` varchar(20) DEFAULT NULL,
-  `Contraseña` varchar(14) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `botellonx_usuarios`
---
-
-INSERT INTO `botellonx_usuarios` (`id_Usuario`, `Name`, `Contraseña`) VALUES
-(1, 'Alocha', 'Urbe2023+.');
+(1, 1, 1, '19-10-2023 16:04', 29836427),
+(2, 3, 100, '18-10-2023 18:22', 30642010),
+(3, 11, 40, '18-10-2023 14:22', 33333333),
+(4, 2, 12, '18-10-2023 18:11', 22222222);
 
 --
 -- Índices para tablas volcadas
@@ -97,18 +57,6 @@ ALTER TABLE `botellonx_botellones`
   ADD KEY `Cedula` (`Cedula`) USING BTREE;
 
 --
--- Indices de la tabla `botellonx_clientes`
---
-ALTER TABLE `botellonx_clientes`
-  ADD PRIMARY KEY (`Cedula`);
-
---
--- Indices de la tabla `botellonx_usuarios`
---
-ALTER TABLE `botellonx_usuarios`
-  ADD PRIMARY KEY (`id_Usuario`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -116,13 +64,7 @@ ALTER TABLE `botellonx_usuarios`
 -- AUTO_INCREMENT de la tabla `botellonx_botellones`
 --
 ALTER TABLE `botellonx_botellones`
-  MODIFY `Id_Compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT de la tabla `botellonx_usuarios`
---
-ALTER TABLE `botellonx_usuarios`
-  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
@@ -134,6 +76,11 @@ ALTER TABLE `botellonx_usuarios`
 ALTER TABLE `botellonx_botellones`
   ADD CONSTRAINT `fk_botellonX_Botellones_botellonX_Usuarios` FOREIGN KEY (`Cedula`) REFERENCES `botellonx_clientes` (`Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
